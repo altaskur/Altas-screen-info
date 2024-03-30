@@ -4,14 +4,11 @@ function createMessage(data) {
   const body = JSON.stringify(data);
   const header = 'data: ';
   const footer = '\n\n';
-  console.log('message: ', header + body + footer);
   return `${header}${body}${footer}`;
 }
 
 function sendSSE(res, message) {
-  console.log('sendSSE: ', message);
   res.write(createMessage(message));
-  console.log('Message sent');
 }
 
 const sseEvents = (_, res) => {
@@ -34,23 +31,9 @@ const sseEvents = (_, res) => {
   });
 
   sendSSE(res, 'Connected');
-
-  // res.on('close', () => {
-  //   console.log(' Close connection .. ... ...')
-  //   res.end()
-  //   // Ver como cerrar tmi
-  //   client.disconnect()
-  // })
-
-  // setInterval(() => {
-  //   console.log('Interval');
-  //   sendSSE(res, 'Mensaje random');
-  // }, 1000);
+  sendSSE(res, { status: getStatus() });
 };
 
-const changeSSEStatus = () => {
-  const status = getStatus();
-  sendSSE(status);
+module.exports = {
+  sseEvents,
 };
-
-module.exports = { sseEvents, changeSSEStatus };

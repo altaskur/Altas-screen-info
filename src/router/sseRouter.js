@@ -1,5 +1,5 @@
 const express = require('express');
-const sseEvents = require('./sse/sse');
+const { sseEvents } = require('../sse/sse');
 
 const router = express.Router();
 
