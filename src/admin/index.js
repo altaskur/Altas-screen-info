@@ -36,7 +36,7 @@ window.onload = () => {
     event.preventDefault();
     const formData = new FormData(formElement);
     const status = formData.get('status');
-    console.log(status);
+
     fetch('http://localhost:3007/change', {
       method: 'POST',
       body: `status=${status}`,
