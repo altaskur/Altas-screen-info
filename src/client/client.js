@@ -1,5 +1,5 @@
 window.onload = () => {
-  const serverAddress = `${window.location.hostname}:3007`;
+  const serverAddress = `http://${window.location.hostname}:3007`;
 
   const SSE = new EventSource(`${serverAddress}/sse`);
   const messageElement = document.querySelector('p');

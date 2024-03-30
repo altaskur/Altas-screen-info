@@ -1,5 +1,6 @@
 window.onload = () => {
-  const serverAddress = `${window.location.hostname}:3007`;
+  const serverAddress = `http://${window.location.hostname}:3007`;
+  console.log(serverAddress);
   const SSE = new EventSource(`${serverAddress}/sse`);
 
   const statusElement = document.querySelector('.display-status');
