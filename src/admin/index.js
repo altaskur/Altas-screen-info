@@ -16,7 +16,7 @@ window.onload = () => {
     });
   });
 
-  selectElement.addEventListener('change', (event) => {
+  selectElement.addEventListener('', (event) => {
     const status = event.target.value;
     fetch('http://localhost:3007/change', {
       method: 'POST',
