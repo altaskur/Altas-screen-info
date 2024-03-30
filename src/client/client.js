@@ -1,7 +1,11 @@
-const SSE = new EventSource('http://localhost:3007/sse');
-const messageElement = document.querySelector('p');
+window.onload = () => {
+  const serverAddress = `${window.location.hostname}:3007`;
 
-SSE.onmessage = (event) => {
-  const data = JSON.parse(event.data);
-  messageElement.textContent = data.status;
+  const SSE = new EventSource(`${serverAddress}/sse`);
+  const messageElement = document.querySelector('p');
+
+  SSE.onmessage = (event) => {
+    const data = JSON.parse(event.data);
+    messageElement.textContent = data.status;
+  };
 };

@@ -1,5 +1,6 @@
 window.onload = () => {
-  const SSE = new EventSource('http://localhost:3007/sse');
+  const serverAddress = `${window.location.hostname}:3007`;
+  const SSE = new EventSource(`${serverAddress}/sse`);
 
   const statusElement = document.querySelector('.display-status');
   const formElement = document.querySelector('form');
@@ -7,7 +8,7 @@ window.onload = () => {
   const buttonElement = document.querySelector('input[type="button"]');
 
   buttonElement.addEventListener('click', () => {
-    fetch('http://localhost:3007/change', {
+    fetch(`${serverAddress}/change`, {
       method: 'POST',
       body: 'status=Libre',
       headers: {
@@ -16,9 +17,9 @@ window.onload = () => {
     });
   });
 
-  selectElement.addEventListener('', (event) => {
+  selectElement.addEventListener('change', (event) => {
     const status = event.target.value;
-    fetch('http://localhost:3007/change', {
+    fetch(`${serverAddress}/change`, {
       method: 'POST',
       body: `status=${status}`,
       headers: {
@@ -37,7 +38,7 @@ window.onload = () => {
     const formData = new FormData(formElement);
     const status = formData.get('status');
 
-    fetch('http://localhost:3007/change', {
+    fetch(`${serverAddress}/change`, {
       method: 'POST',
       body: `status=${status}`,
       headers: {
