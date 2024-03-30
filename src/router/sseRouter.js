@@ -3,6 +3,6 @@ const { sseEvents } = require('../sse/sse');
 
 const router = express.Router();
 
-router.use('/', sseEvents);
+router.get('/', sseEvents);
 
 module.exports = router;

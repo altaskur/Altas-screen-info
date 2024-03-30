@@ -14,7 +14,11 @@ formElement.addEventListener('submit', (event) => {
   event.preventDefault();
   const formData = new FormData(formElement);
   const status = formData.get('status');
-  fetch(`http://localhost:3007/change?status=${status}`, {
+  fetch('http://localhost:3007/change', {
     method: 'POST',
+    body: `status=${status}`,
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
   });
 });

@@ -12,6 +12,8 @@ function sendSSE(res, message) {
 }
 
 const sseEvents = (_, res) => {
+  let currentStatus = getStatus();
+
   const headers = {
     'Content-Type': 'text/event-stream',
     Connection: 'keep-alive',
@@ -31,9 +33,18 @@ const sseEvents = (_, res) => {
   });
 
   sendSSE(res, 'Connected');
-  sendSSE(res, { status: getStatus() });
+  sendSSE(res, { status: currentStatus });
+
+  setInterval(() => {
+    const newStatus = getStatus();
+    if (newStatus !== currentStatus) {
+      sendSSE(res, { status: newStatus });
+      currentStatus = newStatus;
+    }
+  }, 500);
 };
 
 module.exports = {
   sseEvents,
+
 };
