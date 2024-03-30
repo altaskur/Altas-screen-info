@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Admin zone | Altas-Screen-info</title>
+</head>
+
+<body>
+
+    <main>
+        <h1>Admin zone</h1>
+        <section class="status">
+            Estado actual: <span class="display-status">Cargando...</span>
+        </section>
+        <form action="/change" method="post">
+            <fieldset>
+                <label for="status">Cambiar estado:</label>
+                <select name="status" id="status">
+                    <option value="reunion">Reunión</option>
+                    <option value="directo">Directo</option>
+                    <option value="ocupado">Ocupado</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="message">Estado personalizado:</label>
+                <input type="text" name="message" id="message">
+            </fieldset>
+            <input type="button" value="Libre">
+            <input type="submit" value="Guardar">
+        </form>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>

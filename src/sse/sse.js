@@ -1,3 +1,5 @@
+const { getStatus } = require('../status');
+
 function createMessage(data) {
   const body = JSON.stringify(data);
   const header = 'data: ';
@@ -12,7 +14,7 @@ function sendSSE(res, message) {
   console.log('Message sent');
 }
 
-const sseEvents = (req, res) => {
+const sseEvents = (_, res) => {
   const headers = {
     'Content-Type': 'text/event-stream',
     Connection: 'keep-alive',
@@ -46,4 +48,9 @@ const sseEvents = (req, res) => {
   // }, 1000);
 };
 
-module.exports = sseEvents;
+const changeSSEStatus = () => {
+  const status = getStatus();
+  sendSSE(status);
+};
+
+module.exports = { sseEvents, changeSSEStatus };
