@@ -1,0 +1,30 @@
+{
+  "name": "altas-screen-info",
+  "version": "0.1.0",
+  "description": "A SSE system for send work status into a remote monitor or client",
+  "main": "/src/main.js",
+  "scripts": {
+    "dev": "nodemon ./src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altaskur/Altas-screen-info.git"
+  },
+  "author": "Altaskur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/altaskur/Altas-screen-info/issues"
+  },
+  "homepage": "https://github.com/altaskur/Altas-screen-info#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "sse": "^0.0.8"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "nodemon": "^3.1.0"
+  }
+}
