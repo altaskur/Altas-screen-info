@@ -9,7 +9,7 @@ window.onload = () => {
   buttonElement.addEventListener('click', () => {
     fetch('http://localhost:3007/change', {
       method: 'POST',
-      body: 'status=libre',
+      body: 'status=Libre',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
