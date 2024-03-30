@@ -15,25 +15,26 @@
 <body>
 
     <main>
-        <h1>Admin zone</h1>
+
         <section class="status">
+            <h1>- Admin zone -</h1>
             Estado actual: <span class="display-status">Cargando...</span>
         </section>
         <form>
             <fieldset>
                 <label for="status">Cambiar estado:</label>
-                <select name="status" id="status">
-                    <option value="reunion">Reunión</option>
-                    <option value="directo">Directo</option>
-                    <option value="ocupado">Ocupado</option>
+                <select>
+                    <option value="Reunión">Reunión</option>
+                    <option value="Directo">Directo</option>
+                    <option value="Ocupado">Ocupado</option>
                 </select>
             </fieldset>
             <fieldset>
-                <label for="message">Estado personalizado:</label>
-                <input type="text" name="message" id="message">
+                <label for="status">Estado personalizado:</label>
+                <input type="text" name="status" id="status">
+                <input type="submit" value="Guardar">
             </fieldset>
-            <input type="button" value="Libre">
-            <input type="submit" value="Guardar">
+            <input type="button" class="libre" value="Libre">
         </form>
     </main>
     <script src="index.js"></script>
