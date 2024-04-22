@@ -1,9 +1,0 @@
-:root{
-    --color-1:#1A4173;
-    --color-2:#152840;
-    --color-3: #398CBF;
-    --color-4: #D9B18F;
-    --color-5: #1C4DBC;
-
-    --gradient: linear-gradient(90deg, var(--color-1), var(--color-2));
-}

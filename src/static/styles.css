@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "OpenSans";
+    src:
+      url("/assets/OpenSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "IBM Plex Mono";
+    src:
+      url("/assets/IBMPlexMono-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+:root{
+    --color-1:#1A4173;
+    --color-2:#152840;
+    --color-3: #398CBF;
+    --color-4: #D9B18F;
+    --color-5: #1C4DBC;
+
+    --gradient: linear-gradient(90deg, var(--color-1), var(--color-2));
+
+    --font: "OpenSans", sans-serif;
+    --font-2: "IBM Plex Mono", sans-serif;
+
+    color: rgba(255 255 255 / 75%);
+
+    /* ajustar al tamaño de la tablet */
+    font-size: calc(1rem + ((1vw - 7.68px) * 0.6944));
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+body {
+  background: var(--gradient);
+}
